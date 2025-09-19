@@ -1,0 +1,3 @@
+DoctorID,FirstName,LastName,Specialty,PhoneNumber,Email
+1,Alice,Smith,Cardiology,123-456-7890,alice.smith@hospital.org
+2,Bob,Jones,Neurology,872-214-2112,bob.jones@hospital.org

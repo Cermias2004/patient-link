@@ -1,0 +1,41 @@
+
+CREATE TABLE Doctors (
+    DoctorID INT NOT NULL PRIMARY KEY,
+    FirstName VARCHAR(100) NOT NULL,
+    LastName VARCHAR(100) NOT NULL,
+    Specialty VARCHAR(100),
+    PhoneNumber VARCHAR(15),
+    Email VARCHAR(100) NOT NULL UNIQUE
+);
+
+CREATE TABLE Patients (
+    PatientID INT NOT NULL PRIMARY KEY,
+    FirstName VARCHAR(100) NOT NULL,
+    LastName VARCHAR(100) NOT NULL,
+    DOB DATE NOT NULL,
+    PhoneNumber VARCHAR(15),
+    Email VARCHAR(100) NOT NULL UNIQUE,
+    Address VARCHAR(255)
+);
+
+CREATE TABLE Appointments (
+    AppointmentID INT NOT NULL PRIMARY KEY,
+    PatientID INT NOT NULL,
+    DoctorID INT NOT NULL,
+    AppointmentTime TIMESTAMP NOT NULL,
+    Reason VARCHAR(300),
+    Status VARCHAR(100) NOT NULL DEFAULT 'Scheduled',
+    FOREIGN KEY (PatientID) REFERENCES Patients(PatientID) ON DELETE RESTRICT,
+    FOREIGN KEY (DoctorID) REFERENCES Doctors(DoctorID) ON DELETE RESTRICT
+);
+
+CREATE TABLE Billings (
+    BillID INT NOT NULL PRIMARY KEY,
+    AppointmentID INT NOT NULL UNIQUE,
+    BillDate DATE NOT NULL,
+    TotalCost DECIMAL(10,2) NOT NULL,
+    AmountPaid DECIMAL(10,2) DEFAULT 0.00,
+    Status VARCHAR(50) NOT NULL DEFAULT 'Pending',
+    DueDate DATE NOT NULL,
+    FOREIGN KEY (AppointmentID) REFERENCES Appointments(AppointmentID) ON DELETE CASCADE
+);

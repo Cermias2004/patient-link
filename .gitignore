@@ -1,0 +1,17 @@
+# Database credentials
+config/database_credentials.php
+*.env
+
+# XAMPP specific
+/xampp/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+
+# Log files
+*.log

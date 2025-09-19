@@ -1,0 +1,3 @@
+BillID,AppointmentID,BillDate,TotalCost,AmountPaid,Status,DueDate
+1,1,2023-07-23,150.0,50.0,Pending,2023-08-01
+2,2,2023-07-24,200.0,200.0,Paid,2023-08-03
