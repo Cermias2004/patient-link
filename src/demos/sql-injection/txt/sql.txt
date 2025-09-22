@@ -1,0 +1,15 @@
+CREATE DATABASE hospital;
+USE hospital;
+
+CREATE TABLE employee (
+    eid VARCHAR(20) PRIMARY KEY,
+    name VARCHAR(100),
+    password VARCHAR(100),
+    salary INT,
+    ssn VARCHAR(20)
+);
+
+INSERT INTO employee VALUES
+('EID5000', 'Alice', 'abc123', 50000, '111-22-3333'),
+('EID5001', 'Bob', 'bobpass', 60000, '222-33-4444'),
+('EID5002', 'Charlie', 'xyz', 70000, '333-44-5555');
